@@ -10,7 +10,7 @@ is a sub-project of Spring Boot. It adds several production grade services to yo
 application with little effort on your part. In this guide, you will build an application
 and then see how to add these services.
 
-== What You Will build
+== What You Will Build
 
 This guide takes you through creating a "`Hello, world`" RESTful web service with Spring
 Boot Actuator. You will build a service that accepts the following HTTP GET request:
@@ -39,7 +39,6 @@ results.
 
 === What You need
 
-:java_version: 1.8
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/main/prereq_editor_jdk_buildtools.adoc[]
 
 include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/main/how_to_complete_this_guide.adoc[]
@@ -47,31 +46,9 @@ include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/
 [[scratch]]
 == Starting with Spring Initializr
 
-If you use Maven, visit the https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.4.3.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=actuator-service&name=actuator-service&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.actuator-service&dependencies=web,actuator[Spring Initializr] to generate a new project with the required dependencies (Spring Web and Spring Boot Actuator).
+You can use this https://start.spring.io/#!type=maven-project&groupId=com.example&artifactId=actuator-service&name=actuator-service&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.actuator-service&dependencies=web,actuator[pre-initialized project] and click Generate to download a ZIP file. This project is configured to fit the examples in this tutorial.
 
-The following listing shows the `pom.xml` file created when you choose Maven:
-
-====
-[src,xml]
-----
-include::complete/pom.xml[]
-----
-====
-
-If you use Gradle, visit the https://start.spring.io/#!type=gradle-project&language=java&platformVersion=2.4.3.RELEASE&packaging=jar&jvmVersion=1.8&groupId=com.example&artifactId=actuator-service&name=actuator-service&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.actuator-service&dependencies=web,actuator[Spring Initializr] to generate a new project with the required dependencies (Spring Web and Spring Boot Actuator).
-
-The following listing shows the `build.gradle` file created when you choose Gradle:
-
-====
-[src,groovy]
-----
-include::complete/build.gradle[]
-----
-====
-
-=== Manual Initialization (optional)
-
-If you want to initialize the project manually rather than use the links shown earlier, follow the steps given below:
+To manually initialize the project:
 
 . Navigate to https://start.spring.io.
 This service pulls in all the dependencies you need for an application and does most of the setup for you.
@@ -81,6 +58,8 @@ This service pulls in all the dependencies you need for an application and does 
 . Download the resulting ZIP file, which is an archive of a web application that is configured with your choices.
 
 NOTE: If your IDE has the Spring Initializr integration, you can complete this process from your IDE.
+
+NOTE: You can also fork the project from Github and open it in your IDE or other editor.
 
 == Run the Empty Service
 
@@ -206,7 +185,7 @@ https://docs.spring.io/spring/docs/{spring_version}/javadoc-api/org/springframew
 will handle the conversion of a `Greeting` object to JSON if the request's `Accept` header
 specifies that JSON should be returned.
 
-NOTE: How do you know Jackson 2 is on the classpath? Either run ` mvn dependency:tree` or
+NOTE: How do you know Jackson 2 is on the classpath? Either run `mvn dependency:tree` or
 `./gradlew dependencies`, and you get a detailed tree of dependencies that includes
 Jackson 2.x. You can also see that it comes from
 https://github.com/spring-projects/spring-boot/tree/main/spring-boot-project/spring-boot-starters/spring-boot-starter-json[/spring-boot-starter-json],
